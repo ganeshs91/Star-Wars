@@ -20,11 +20,11 @@
 <div class="percent_lbl">
 	<span class="popvalue">Population %:</span>
 	<div class="percent_wrap">
-		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #FFD700" data-ng-if="(planet.populationPercent >= 50) && (planet.populationPercent <= 75)"></div>
+		<div class="percent_value" style="width: {{(planet.populationPercent >= 1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #FFD700" data-ng-if="(planet.populationPercent >= 50) && (planet.populationPercent <= 75)"></div>
 
-		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: red" data-ng-if="(planet.populationPercent >= 0) && (planet.populationPercent <= 49)"></div>
+		<div class="percent_value" style="width: {{(planet.populationPercent >= 1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: red" data-ng-if="(planet.populationPercent >= 0) && (planet.populationPercent <= 49)"></div>
 
-		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #01b26e" data-ng-if="(planet.populationPercent >= 76) && (planet.populationPercent <= 100)"></div>
+		<div class="percent_value" style="width: {{(planet.populationPercent >= 1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #01b26e" data-ng-if="(planet.populationPercent >= 76) && (planet.populationPercent <= 100)"></div>
 
 		<span class="percenttext">{{planet.populationPercent}}%</span>
 	</div>
