@@ -6,24 +6,25 @@ app.controller('loginCtrl', ['$scope', '$http', '$location', function($scope, $h
 	}
 
 	$scope.login = function(){
+	   // Login People Service
 	   $http.get("http://swapi.co/api/people/?search="+$scope.user).then(function(response){
-	   		if(response.data.count !== 0){
-	   			$scope.person = response.data.results[0];
-                if(($scope.user == $scope.person.name) && ($scope.password == $scope.person.birth_year)){
-                	if(typeof(Storage) !== "undefined"){
-	   					localStorage.starWarsUser = $scope.person.name;	
-	   				}
-                	$location.url('/planets');
-                }else{
-                	$scope.errorMsgContainer = true;
-                	$scope.errorMsg = "Invalid Login. Please try again.";
-                }
+		if(response.data.count !== 0){
+			$scope.person = response.data.results[0];
+			if(($scope.user == $scope.person.name) && ($scope.password == $scope.person.birth_year)){
+				if(typeof(Storage) !== "undefined"){
+					localStorage.starWarsUser = $scope.person.name;	
+				}
+				$location.url('/planets');
 			}else{
 				$scope.errorMsgContainer = true;
-				$scope.errorMsg = "Couldn't find you.";
-			} 
+				$scope.errorMsg = "Invalid Login. Please try again.";
+			}
+		}else{
+			$scope.errorMsgContainer = true;
+			$scope.errorMsg = "Couldn't find you.";
+		} 
 	   }, function(err){
-       		console.log("Error");
+       		console.log("Error: Login People Service");
 	   })
 	}
 }]);
