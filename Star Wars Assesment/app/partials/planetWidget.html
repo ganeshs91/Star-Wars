@@ -1,0 +1,31 @@
+<div class="fl planetname">
+	<span ng-if="(planet.populationPercent <= 2 )" style="font-size: 12px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 2) && (planet.populationPercent <= 4)" style="font-size: 14px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 4) && (planet.populationPercent <= 7)" style="font-size: 16px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 7) && (planet.populationPercent <= 10)" style="font-size: 18px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 10) && (planet.populationPercent <= 30)" style="font-size: 20px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 30) && (planet.populationPercent <= 50)" style="font-size: 22px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 50) && (planet.populationPercent <= 70)" style="font-size: 24px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 70) && (planet.populationPercent <= 90)" style="font-size: 26px">{{planet.name}}</span>
+
+	<span ng-if="(planet.populationPercent > 90) && (planet.populationPercent <= 100)" style="font-size: 30px">{{planet.name}}</span>
+</div>
+<div class="percent_lbl">
+	<span class="popvalue">Population %:</span>
+	<div class="percent_wrap">
+		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #FFD700" data-ng-if="(planet.populationPercent >= 50) && (planet.populationPercent <= 75)"></div>
+
+		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: red" data-ng-if="(planet.populationPercent >= 0) && (planet.populationPercent <= 49)"></div>
+
+		<div class="percent_value" style="width: {{(planet.populationPercent >=1) && (planet.populationPercent <= 3) ? 6 : (planet.populationPercent)}}%; background-color: #01b26e" data-ng-if="(planet.populationPercent >= 76) && (planet.populationPercent <= 100)"></div>
+
+		<span class="percenttext">{{planet.populationPercent}}%</span>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<header class="head clr">
+	<div class="logo fl">
+		<img src="assets/img/star-wars.png" width="120" height="50" alt="starwar logo"/>
+	</div>
+	<div class="fr logout">
+    <p style="font-weight: bold">{{logUser}}</p>
+		<a href="javascript:void(0)" ng-click="logOut()">Log out</a>
+	</div>
+</header>
+
+<div class="planets-container clr">
+  <h2 class="title">Find your Planet</h2>
+  <div class="input-group planet-search">
+      <input type="text" class="form-control planetsrc" ng-model="planet" placeholder="Search Planet..."/>
+      <button class="srcbtn" type="button" id="planetBtn" ng-click="searchPlanet()" data-ng-disabled="dsblSearchBtn"></button>
+  </div>
+  <div class="planets-list-components">
+    <div ng-if="planets.length == 0" class="planets-empty">
+    	<p>Couldn't find any planets...</p>
+    </div>
+  	<ul class="list-group list_wrap" ng-if="planets.length > 0">
+	     <li class="list-group-item fl w100p" ng-repeat="planet in planets | orderBy: 'populationPercent': 'reverse'"> 
+	         <planet-widget planet="planet" max-population="maxPopulation"></planet-widget>
+	     </li>
+	  </ul>
+  </div>
+</div>

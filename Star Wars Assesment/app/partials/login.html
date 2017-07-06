@@ -1,0 +1,17 @@
+<form class="form-signin" name="loginForm">       
+  <h2 class="form-signin-heading">Star Wars Login</h2>
+  <fieldset class="fieldwrapper">
+    <input type="text" class="form-control fielduser" id="fielduser" name="username" required="" autofocus="" ng-model="user"/>
+    <label for="fielduser" class="lbl" ng-class="{top_lb: user.length > 0}">Username</label>
+  </fieldset>
+  <fieldset class="fieldwrapper">
+    <input type="password" class="form-control fielduser" id="fieldpwsd" name="password" required="" ng-model="password"/>
+    <label for="fieldpwsd" class="lbl" ng-class="{top_lb: password.length > 0}">Password</label>
+  </fieldset>
+  <fieldset class="fieldwrapper clr">
+	  <input type="checkbox" class="check" value="remember-me" id="rememberMe" name="rememberMe"/>
+	  <label class="checkbox" for="rememberMe">Remember me</label>
+  </fieldset>
+  <button class="btn loginBtn" type="submit" ng-click="login()" data-ng-disabled="loginForm.$invalid" data-ng-class="{ 'disabled': loginForm.$invalid }">Login</button>
+  <div class="errorMsgContainer" data-ng-show="errorMsgContainer"><p>{{errorMsg}}</p></div>   
+</form>
