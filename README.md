@@ -1,2 +1,2 @@
-# sample
-jus to check
+# Star-Wars
+Display planets
