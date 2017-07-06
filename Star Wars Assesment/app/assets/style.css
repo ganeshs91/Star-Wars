@@ -241,7 +241,7 @@ a{
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	color: #f5f5f5;
+	color: #0000FF;
 }
 .list_wrap li:hover{
 	background:#f5f5f5;	
